@@ -6,7 +6,7 @@ module Faker
   end
 end
 
-class TestFlexible < Test::Unit::TestCase
+class TestFlexible < Minitest::Test
 
   def setup
     I18n.backend.store_translations(:xx, :faker => {:chow => {:yummie => [:fudge, :chocolate, :caramel], :taste => "delicious"}})
