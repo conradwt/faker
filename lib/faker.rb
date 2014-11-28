@@ -160,6 +160,7 @@ end
 require 'faker/address'
 require 'faker/code'
 require 'faker/company'
+require 'faker/english'
 require 'faker/finance'
 require 'faker/internet'
 require 'faker/lorem'
