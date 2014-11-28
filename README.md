@@ -153,6 +153,48 @@ Faker::Date.forward(23) # => "Fri, 03 Oct 2014"
 Faker::Date.backward(14) #=> "Fri, 19 Sep 2014"
 ```
 
+###Faker::English
+---------------
+
+```ruby
+
+Faker::English.word #=> "polyphagian"
+
+# Optional arguments: num=3, supplemental=false
+Faker::English.words #=> ["cartaceous", "myelosyringosis", "oriently"]
+Faker::English.words(4) #=> ["undercry", "hatefulness", "revolutional", "neighborhood"]
+Faker::English.words(4, true) #=>  ["dactyliology", "laudableness", "beplague", "cephalotheca"]
+
+# Optional arguments: char_count=255
+Faker::English.characters #=>  "x9cfr1qudlr666lh64b1553tbqzosebb7qcoxq1bd5o7rq3vm9f8x3f2lf4s0ybsweuhkpbbdtms259fy2deuhc3nj0kr3oo54en3nq1dn0anatapz53k5hbkxqbtf4lvq5doaorc28h6xs97n6byxp5cdaoa8mzpbquow2svd7h0f5akxvewc18af1nuyp88csfhtycnlpxq9mz2g19mhyhpo4k29yz67btun1fzkiwtdh9wr7z69rz36cuk5o"
+Faker::English.characters(10) #=> "mmt6dkwbyp"
+
+# Optional arguments: word_count=4, supplemental=false, random_words_to_add=6
+Faker::English.sentence #=> "Hatefulness disthrall ethanamide disjointedly lomastome."
+Faker::English.sentence(3) #=> "Circumscriptively patria receptor reedition chirruper porometer."
+Faker::English.sentence(3, true) #=> "Myocarditic rewardproof interresponsibility."
+Faker::English.sentence(3, false, 4) #=> "Intracolic palolo vaucheriaceae retinochorioidal chirruper."
+Faker::English.sentence(3, true, 4) #=> "Ordinally preoffensiveness inexhaustedly cynegetics reassault."
+
+# Optional arguments: sentence_count=3, supplemental=false
+Faker::English.sentences #=> ["Coloration squibling antiphonon reversionally anaglyptical tormentedly unrake.", "Obelism vowess anchoretical semianimated tripodic tenthredo penutian pallion.", "Peradventure unconveyed querist energy unresultive."]
+Faker::English.sentences(1) #=> ["Blowiron fotmal tonneau neptunean ensilate contortae bodywood schizogamy."]
+Faker::English.sentences(1, true) #=> ["Fural apanthropia pichiciago chafewax undecanaphthene inflammableness."]
+
+# Optional arguments: sentence_count=3, supplemental=false, random_sentences_to_add=3
+Faker::English.paragraph #=> "Unprelatic admaxillary squibling dyspneic mollifiable horologe energy. Superugly postgrippal cinnamate asthenical inexpertness overtwine spiritistic. Toparch pessoner phenolate outdance patria paternosterer prothrift. Monohydroxy goldhead artesian anticytotoxin postgrippal."
+Faker::English.paragraph(2) #=> "Lomastome gousty semianimated muddler mantodea. Marksman lamany floodlet herniary abdicable hepatocystic ferry gestural."
+Faker::English.paragraph(2, true) #=> "Horologe pseudovelar unmorose. Cartaceous hypertypical theetsee amyloplast."
+Faker::English.paragraph(2, false, 4) #=> "Linework tormentingly energy damascenine histochemistry. Ischiocavernous mistify marimba thronedom hippidion castlewise hypopetaly pichiciago. Reissuement unobtunded blindly torrentful faller micromeral mummied. Collectivization ceyx metaspermic hyracotheriinae. Goldhead teutonism cornule."
+Faker::English.paragraph(2, true, 4) #=> "Outness uncharred lactiflorous antidotal contour vinificator paternosterer. Upslope ischiocavernous exuberance laconian mainly woofer."
+
+# Optional arguments: paragraph_count=3, supplemental=false
+Faker::English.paragraphs #=> ["Wavably reflexness hypnotizer zarf. Anchoretical allophyle miskill. Agnification mediosilicic marksman robomb.", "Supersedable gastrointestinal taiwanhemp recollate metencephalon mainly historicity. Endeictic multivalve contextive usaron. Ohoy palaeocyclic nopalry suffragettism janghey. Perdurable critling sultanship denis seleucid summertide montjoy sextula.", "Emiction cancrophagous ferry preoperation cockaigne mila fural tripodic. Corrigent muddler unmetropolitan sapsuck vulvitis. Paroxysmic erysipelous cephalotheca cinerary."]
+Faker::English.paragraphs(1) #=> ["Outinvent plasmase tripliform draggily. Goldhead krugerism mascotry galatic unfoggy. Dolia sponsible roarer cystiform superstratum resinlike sulforicinate absonous."]
+Faker::English.paragraphs(1, true) #=>  ["Mandamus ulteriorly polyphemic mummied. Mallear nomancy algin illegalize hypnotizer exsectile shaftless transhumant. Summertide burghbote apery. Pyoperitonitis metatheology polysaccharide. Nazi specializer synodontid clownade."]
+
+```
+
 ###Faker::Internet
 ---------------
 
@@ -256,7 +298,6 @@ Faker::Lorem.paragraphs(1) #=> ""
 Faker::Lorem.paragraphs(1, true) #=> ""
 
 ```
-
 ###Faker::Name
 --------------
 
