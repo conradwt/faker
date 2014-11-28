@@ -7,9 +7,17 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
+    ansi (1.4.3)
+    builder (3.2.2)
     i18n (0.6.9)
     minitest (5.4.3)
+    minitest-reporters (1.0.8)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     rake (10.1.0)
+    ruby-progressbar (1.7.0)
 
 PLATFORMS
   ruby
@@ -17,4 +25,5 @@ PLATFORMS
 DEPENDENCIES
   faker!
   minitest
+  minitest-reporters
   rake
