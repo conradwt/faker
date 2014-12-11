@@ -39,8 +39,8 @@ class TestFakerEnglish < Minitest::Test
 
   # Faker::Lorem.word generates random word from standart wordlist
   def test_word
-    @tester = Faker::Lorem
-    @standard_wordlist = I18n.translate('faker.lorem.words')
+    @tester = Faker::English
+    @standard_wordlist = I18n.translate('faker.english.words')
     1000.times { assert @standard_wordlist.include?(@tester.word) }
   end
 
