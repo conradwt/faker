@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require 'test_helper'
 
 # when these tests are run under Ruby 1.8.7, they will use the
 # self-defined Array#sample method in lib/extensions/array and will test whether it
@@ -49,7 +49,7 @@ class TestArraySampleMethodCompatibility < Minitest::Test
 
   def test_raises_Argument_Error_with_negative_param
     source = ['foo','bar']
-    assert_raise ArgumentError do
+    assert_raises ArgumentError do
       source.sample(-1)
     end
   end

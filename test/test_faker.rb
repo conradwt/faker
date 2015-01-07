@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require 'test_helper'
 
 class TestFaker < Minitest::Test
 
