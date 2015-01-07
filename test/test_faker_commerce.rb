@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'i18n'
 
 class TestFakerCommerce < Minitest::Test
 
@@ -32,9 +33,9 @@ class TestFakerCommerce < Minitest::Test
       }
     }
 
-    I18n.backend.store_translations(:xy, data)
-    I18n.with_locale(:xy) do
-      assert_match ' + ', @tester.department(2, true)
+    I18n.backend.store_translations( :xy, data )
+    I18n.with_locale( :xy ) do
+      assert_match ' + ', @tester.department( 2, true )
     end
   end
 

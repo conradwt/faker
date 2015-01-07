@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require 'test_helper'
+require 'i18n'
 
 module Faker
   class Foodie < Base
@@ -9,6 +10,7 @@ end
 class TestFlexible < Minitest::Test
 
   def setup
+    I18n.config.enforce_available_locales = false
     I18n.backend.store_translations(:xx, :faker => {:chow => {:yummie => [:fudge, :chocolate, :caramel], :taste => "delicious"}})
     I18n.backend.store_translations(:home, :faker => {:address => {:birthplace => [:bed, :hospital, :airplane]}})
     I18n.backend.store_translations(:kindergarden, :faker => {:name => {:girls_name => [:alice, :cheryl, :tatiana]}})
@@ -30,7 +32,7 @@ class TestFlexible < Minitest::Test
 
   def test_raises_no_method_error
     I18n.with_locale(:xx) do
-      assert_raise(NoMethodError) do
+      assert_raises NoMethodError do
         Faker::Foodie.eeew
       end
     end

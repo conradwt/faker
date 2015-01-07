@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require 'test_helper'
+require 'i18n'
 
 class TestFakerStreet < Minitest::Test
   def setup
