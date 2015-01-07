@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'i18n'
 
 class TestFakerStreet < Minitest::Test
   def setup
@@ -17,6 +16,7 @@ class TestFakerStreet < Minitest::Test
         }
       }
     }
+    I18n.config.enforce_available_locales = false
     I18n.backend.store_translations(:shire, shire)
   end
 

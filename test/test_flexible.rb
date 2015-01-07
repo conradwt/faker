@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'i18n'
 
 module Faker
   class Foodie < Base

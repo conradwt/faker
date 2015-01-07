@@ -2,14 +2,14 @@ PATH
   remote: .
   specs:
     faker (1.4.3)
-      i18n (~> 0.5)
+      i18n (~> 0.7.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
     ansi (1.4.3)
     builder (3.2.2)
-    i18n (0.6.9)
+    i18n (0.7.0)
     minitest (5.4.3)
     minitest-reporters (1.0.8)
       ansi

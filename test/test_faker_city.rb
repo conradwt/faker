@@ -21,6 +21,7 @@ class TestFakerCity < Minitest::Test
         }
       }
     }
+    I18n.config.enforce_available_locales = false
     I18n.backend.store_translations(:xy, xy)
   end
 
