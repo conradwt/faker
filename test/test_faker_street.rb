@@ -2,6 +2,7 @@ require 'test_helper'
 
 class TestFakerStreet < Minitest::Test
   def setup
+    @old_locales = I18n.config.available_locales
     shire = {
       :faker => {
         :address => {
@@ -18,6 +19,11 @@ class TestFakerStreet < Minitest::Test
     }
     I18n.config.enforce_available_locales = false
     I18n.backend.store_translations(:shire, shire)
+    I18n.config.available_locales += [ :shire ]
+  end
+
+  def teardown
+    I18n.config.available_locales = @old_locales
   end
 
   def test_street_name_supports_flexible_formats

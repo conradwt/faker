@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 require 'test_helper'
+=======
+require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
+require 'minitest/mock'
+>>>>>>> upstream/master
 
 class TestFakerNumber < Minitest::Test
   def setup
@@ -26,6 +31,21 @@ class TestFakerNumber < Minitest::Test
   def test_digit
     assert @tester.digit.match(/[0-9]{1}/)
     assert (1..1000).collect {|i| @tester.digit == "9"}.include?(true)
+  end
+
+  def test_even_distribution
+    assert stats = {}
+    assert times = 10000
+
+    times.times do
+      assert num = @tester.digit
+      stats[num] ||= 0
+      assert stats[num] += 1
+    end
+
+    stats.each do |k, v|
+      assert_in_delta 10.0, 100.0 * v / times, 2.0
+    end
   end
 
   def test_between
@@ -73,5 +93,19 @@ class TestFakerNumber < Minitest::Test
   def test_hexadecimal
     assert @tester.hexadecimal(4).match(/[0-9a-f]{4}/)
     assert @tester.hexadecimal(7).match(/[0-9a-f]{7}/)
+  end
+
+  def test_insignificant_zero
+    @tester.stub :digit, 0 do
+      assert_equal '0', @tester.number(1)
+      100.times do
+        assert_match (/^[1-9]0/), @tester.number(2)
+      end
+
+      assert_equal '0.0', @tester.decimal(1,1)
+      100.times do
+        assert_match (/^0\.0[1-9]/), @tester.decimal(1,2)
+      end
+    end
   end
 end
